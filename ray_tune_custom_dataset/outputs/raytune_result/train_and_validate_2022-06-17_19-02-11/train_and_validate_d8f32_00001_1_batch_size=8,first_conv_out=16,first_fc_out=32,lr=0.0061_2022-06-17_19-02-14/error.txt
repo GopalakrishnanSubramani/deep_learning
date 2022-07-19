@@ -1,0 +1,45 @@
+Failure # 1 (occurred at 2022-06-17_19-02-15)
+[36mray::ImplicitFunc.train()[39m (pid=543497, ip=192.168.50.164, repr=train_and_validate)
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/ray/tune/trainable.py", line 360, in train
+    result = self.step()
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/ray/tune/function_runner.py", line 404, in step
+    self._report_thread_runner_error(block=True)
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/ray/tune/function_runner.py", line 574, in _report_thread_runner_error
+    raise e
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/ray/tune/function_runner.py", line 277, in run
+    self._entrypoint()
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/ray/tune/function_runner.py", line 352, in entrypoint
+    self._status_reporter.get_checkpoint(),
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/ray/tune/function_runner.py", line 645, in _trainable_func
+    output = fn()
+  File "search_and_train.py", line 38, in train_and_validate
+    train_epoch_loss, train_epoch_acc = train(model, train_loader, optimizer,criterion,device)
+  File "/home/sandbox-2/Documents/Gopal_office_file/dogs-vs-cats/ray_tune_custom_1/src/train_utils.py", line 10, in train
+    for i, data in enumerate(data_loader):
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 521, in __next__
+    data = self._next_data()
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 1203, in _next_data
+    return self._process_data(data)
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 1229, in _process_data
+    data.reraise()
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torch/_utils.py", line 434, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torch/utils/data/dataset.py", line 363, in __getitem__
+    return self.dataset[self.indices[idx]]
+  File "/home/sandbox-2/Documents/Gopal_office_file/dogs-vs-cats/ray_tune_custom_1/src/datasets.py", line 36, in __getitem__
+    image = self.transform(image)
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torchvision/transforms/transforms.py", line 49, in __call__
+    img = t(img)
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torchvision/transforms/transforms.py", line 175, in __call__
+    return F.resize(img, self.size, self.interpolation)
+  File "/home/sandbox-2/anaconda3/envs/dl/lib/python3.6/site-packages/torchvision/transforms/functional.py", line 189, in resize
+    raise TypeError('img should be PIL Image. Got {}'.format(type(img)))
+TypeError: img should be PIL Image. Got <class 'numpy.ndarray'>

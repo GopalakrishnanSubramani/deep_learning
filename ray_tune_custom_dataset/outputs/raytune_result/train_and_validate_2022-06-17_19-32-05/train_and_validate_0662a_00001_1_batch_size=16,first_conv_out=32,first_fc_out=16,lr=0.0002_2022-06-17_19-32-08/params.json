@@ -1,0 +1,6 @@
+{
+  "batch_size": 16,
+  "first_conv_out": 32,
+  "first_fc_out": 16,
+  "lr": 0.00019592715578554566
+}

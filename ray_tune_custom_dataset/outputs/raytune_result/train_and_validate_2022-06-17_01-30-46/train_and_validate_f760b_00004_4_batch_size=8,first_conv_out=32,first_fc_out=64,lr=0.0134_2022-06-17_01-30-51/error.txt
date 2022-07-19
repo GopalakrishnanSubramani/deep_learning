@@ -1,0 +1,17 @@
+Failure # 1 (occurred at 2022-06-17_01-30-57)
+[36mray::ImplicitFunc.train()[39m (pid=58958, ip=78.154.136.145, repr=train_and_validate)
+  File "/home/krish/anaconda3/envs/deeplearning/lib/python3.9/site-packages/ray/tune/trainable.py", line 360, in train
+    result = self.step()
+  File "/home/krish/anaconda3/envs/deeplearning/lib/python3.9/site-packages/ray/tune/function_runner.py", line 404, in step
+    self._report_thread_runner_error(block=True)
+  File "/home/krish/anaconda3/envs/deeplearning/lib/python3.9/site-packages/ray/tune/function_runner.py", line 574, in _report_thread_runner_error
+    raise e
+  File "/home/krish/anaconda3/envs/deeplearning/lib/python3.9/site-packages/ray/tune/function_runner.py", line 277, in run
+    self._entrypoint()
+  File "/home/krish/anaconda3/envs/deeplearning/lib/python3.9/site-packages/ray/tune/function_runner.py", line 349, in entrypoint
+    return self._trainable_func(
+  File "/home/krish/anaconda3/envs/deeplearning/lib/python3.9/site-packages/ray/tune/function_runner.py", line 645, in _trainable_func
+    output = fn()
+  File "/home/krish/Documents/dogs-vs-cats/py_files/src/search_and_train.py", line 25, in train_and_validate
+    train_loader, validation_loader, test_loader = get_datasets(DATA_ROOT_DIR,CSV_DIR,config['batch_size'])
+TypeError: get_datasets() missing 1 required positional argument: 'NUM_WORKERS'
