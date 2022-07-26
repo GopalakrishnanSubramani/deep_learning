@@ -1,5 +1,4 @@
-# Transfer Learning
+# PyTorch
 
-This project based on transfer learning using pre-trained ResNet18 trained from scratch with wonders of the world multiclass  dataset.
-Here, tried both feature extraction and fine tuning techniques.
+This repo is belongs to the projects based on PyTorch framework.
 
