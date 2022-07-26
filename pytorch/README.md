@@ -1,3 +1,5 @@
-# Torch_files
+# Transfer Learning
 
-This repository has the computer vision learning files based on pytorch framework
+This project based on transfer learning using pre-trained ResNet18 trained from scratch with wonders of the world multiclass  dataset.
+Here, tried both feature extraction and fine tuning techniques.
+
